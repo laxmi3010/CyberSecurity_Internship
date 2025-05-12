@@ -1,0 +1,77 @@
+
+Team Members:
+1.Laxmi Gupta
+2.Sony Vishwakarma
+3.Harsh Shelar
+
+This is done by Laxmi Gupta
+
+
+Wargame 1: KRYPTON (OverTheWire)
+
+1. Learning Objective
+•	Understand basic encryption and decryption techniques.
+•	Practice Linux file handling and permission management.
+•	Learn to work with symbolic links and ROT cipher.
+
+2. Key Tools/Commands Used
+•	ssh
+•	echo | base64 --decode
+•	cat, tr
+•	ln -s
+•	chmod
+•	mktemp
+•	ls, cd, logout
+
+3. Concepts Learned
+•	Base64 decoding
+•	ROT13/ROT-n Cipher
+•	Symbolic linking and permission bypass
+•	Frequency analysis for ciphertext
+•	Manual decryption with substitution ciphers
+
+4. Walkthrough (Level by Level)
+Krypton Level 0 → Level 1
+•	Command:
+echo S1JZUFRPTklTR1JFQVQ= | base64 --decode
+•	Result: KRYPTONISGREAT
+•	SSH Login:
+ssh -p 2231 krypton1@krypton.labs.overthewire.org
+
+Krypton Level 1 → Level 2
+•	Commands:
+cd /krypton/krypton1
+cat README
+cat krypton2 | tr "[A-Z]" "[N-ZA-M]" (ROT13 decryption)
+•	Password Found: ROTTEN
+
+Krypton Level 2 → Level 3
+•	SSH Login:
+ssh -p 2231 krypton2@krypton.labs.overthewire.org
+•	Process: Create temp dir → Link keyfile.dat → Run encrypt binary → Decrypt using ROT-N shift manually.
+•	Password Found: CAESARISEASY
+
+Krypton Level 3 → Level 4
+•	Commands:
+Frequency analysis using tr and wc commands.
+•	Substitution Cipher: Decoded using letter frequency comparison.
+•	Password Found: BRUTE
+
+Krypton Level 4 → Level 5
+•	Commands:
+Explore /krypton/krypton4, find clues inside found1, krypton5.
+•	Password Found: CLEARTEXT
+
+Krypton Level 5 → Level 6
+•	Commands:
+Similar file access patterns, exploration.
+•	Password Found: RANDOM
+
+Krypton Level 6 → Level 7
+•	Process:
+Work with files inside /krypton/krypton6, link files, use encrypt6 binary and xxd tool for bit-level analysis.
+
+5. Reflection/Notes
+•	Focused heavily on understanding simple ciphers and Linux file structure.
+•	Using symbolic links smartly helped to bypass permission restrictions.
+•	Manual decryption was slow but improved logical thinking on ciphers.

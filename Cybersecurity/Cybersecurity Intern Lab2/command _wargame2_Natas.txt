@@ -1,0 +1,279 @@
+Team Members:
+1.Laxmi Gupta
+2.Sony Vishwakarma
+3.Harsh Shelar
+
+This is done by Sony Vishwakarma
+
+2. NATAS – https://overthewire.org/wargames/natas/
+
+Level 0 ➔ Level 1
+Open: http://natas0.natas.labs.overthewire.org
+Username: natas0
+Password: natas0
+Inspect → Find password in comment:
+Password: 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq
+
+Level 1 ➔ Level 2
+Open: http://natas1.natas.labs.overthewire.org
+Username: natas1
+Password: 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq
+View Source → Find password:
+Password: TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
+
+Level 2 ➔ Level 3
+Open: http://natas2.natas.labs.overthewire.org
+Username: natas2
+Password: TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
+Inspect → Find src="files/pixel.png"
+Open: http://natas2.natas.labs.overthewire.org/files/users.txt
+Password: 3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+
+Level 3 ➔ Level 4
+Open: http://natas3.natas.labs.overthewire.org
+Username: natas3
+Password: 3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+Visit: /robots.txt → Disallow: /s3cr3t/
+Open: http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt
+Password: QryZXc2e0zahULdHrtHxzyYkj59kUxLQ
+
+Level 4 ➔ Level 5
+1.	Open Burp Suite.
+2.	Set Firefox proxy: 127.0.0.1:8080.
+3.	Proxy → Intercept → Intercept ON.
+4.	Open http://natas4.natas.labs.overthewire.org.
+5.	Login: natas4, QryZXc2e0zahULdHrtHxzyYkj59kUxLQ.
+6.	Modify header: Referer: http://natas5.natas.labs.overthewire.org/.
+7.	Click Forward.
+8.	Refresh browser.
+9.	Password: 0n35PkggAPm2zbEpOU802c0x0Msn1ToK.
+
+Level 5 ➔ Level 6
+1.	Open Burp Suite.
+2.	Set Firefox proxy: 127.0.0.1:8080.
+3.	Proxy → Intercept → Intercept ON.
+4.	Open http://natas5.natas.labs.overthewire.org.
+5.	Login: natas5, 0n35PkggAPm2zbEpOU802c0x0Msn1ToK.
+6.	Capture request.
+7.	Modify cookie: loggedin=1.
+8.	Click Forward.
+9.	Refresh browser.
+10.	Password: 0RoJwHdSKWFTYR5WuiAewauSuNaBXned.
+
+Level 6 ➔ Level 7
+1.	Open Burp Suite.
+2.	Set Firefox proxy: 127.0.0.1:8080.
+3.	Proxy → Intercept → Intercept ON.
+4.	Open http://natas6.natas.labs.overthewire.org.
+5.	Login: natas6, 0RoJwHdSKWFTYR5WuiAewauSuNaBXned.
+6.	Inspect the page.
+7.	Look for includes/secret.inc in the HTML source.
+8.	Open includes/secret.inc file.
+9.	Find the secret: FOEIUWGHFEEUHOFUOIU.
+10.	Password: bmg8SvU1LizuWjx3y7xkNERkHxGre0GS.
+
+Level 7 ➔ Level 8
+1.	Open Burp Suite.
+2.	Set Firefox proxy: 127.0.0.1:8080.
+3.	Proxy → Intercept → Intercept ON.
+4.	Open http://natas7.natas.labs.overthewire.org.
+5.	Login: natas7, bmg8SvU1LizuWjx3y7xkNERkHxGre0GS.
+6.	Modify URL to:
+http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8.
+7.	Click Forward in Burp Suite to send the request.
+8.	Password: xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q.
+
+Level 8 ➔ Level 9
+1.	Open http://natas8.natas.labs.overthewire.org.
+2.	Login: natas8, xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q.
+3.	View source → Find encoded string.
+4.	Decode hex string.
+5.	Reverse the decoded text.
+6.	Base64 decode the reversed string.
+7.	Get password: ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t.
+
+Level 9 ➔ Level 10
+1.	Open Burp Suite and set Firefox proxy to 127.0.0.1:8080.
+2.	Go to http://natas9.natas.labs.overthewire.org and log in with natas9 and ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t.
+3.	Inject ; cat /etc/natas_webpass/natas10 into the appropriate input field.
+4.	Click "Forward" in Burp Suite to send the request.
+5.	The password for Natas10 is t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu.
+
+Level 10 ➔ Level 11
+1.	Open Burp Suite and set Firefox proxy to 127.0.0.1:8080.
+2.	Go to http://natas10.natas.labs.overthewire.org and log in with natas10 and t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu.
+3.	Inject ; cat /etc/natas_webpass/natas11 into the appropriate input field.
+4.	Click "Forward" in Burp Suite to send the request.
+5.	The password for Natas11 is UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk.
+
+Level 11 ➔ Level 12
+1.	Open Burp Suite and set Firefox proxy to 127.0.0.1:8080.
+2.	Go to http://natas11.natas.labs.overthewire.org and log in with natas11 and UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk.
+3.	Capture the HTTP request in Burp Suite.
+4.	Find the XOR-encoded cookie and decode it.
+5.	Modify the decoded value by setting showpassword=yes.
+6.	Re-encode the cookie with XOR and replace it in the request.
+7.	Click "Forward" in Burp Suite to send the request.
+8.	The password for Natas12 is EDXpOpS26wLKHZy1rDBPUZkORKfLGIR3.
+
+Level 12 ➔ Level 13
+Upload PHP disguised as JPG → Intercept → Modify Content-Type
+Username: natas12
+Password: EDXpOpS26wLKHZy1rDBPUZkORKfLGIR3
+Password: jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY
+
+Level 13 ➔ Level 14
+Upload .php file disguised → Execute file
+Username: natas13
+Password: jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY
+Password: fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+Level 14 ➔ Level 15
+Hydra brute force login
+Username: natas14
+Password: fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+Password: lW9Z7gTI7p7IDgn6aiy4iYcw3hcqwgCM
+
+Level 15 ➔ Level 16
+Login
+View debug output → Find encoded password
+Base64 decode it → 
+Username: natas15
+Password: lW9Z7gTI7p7IDgn6aiy4iYcw3hcqwgCM
+Password: WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
+
+Level 16 ➔ Level 17
+Blind SQLi password guessing
+Username: natas16
+Password: WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
+Password: DXLnwrfS5vayvjhXcHBkBqxXK2kF6kMb
+
+Level 17 ➔ Level 18
+Time-based SQL injection sleep(5)
+Username: natas17
+Password: DXLnwrfS5vayvjhXcHBkBqxXK2kF6kMb
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw
+
+Level 18 ➔ Level 19
+Brute-force PHPSESSID values from 0 to 640
+Find session where admin=1
+Use script:
+for i in {0..640}; do curl -s --cookie "PHPSESSID=$i" -u natas18:<password> http://natas18.natas.labs.overthewire.org/ | grep -i "password"; done
+Username: natas18
+Password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw
+Password: xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
+
+Level 19 ➔ Level 20
+Login
+Modify PHPSESSID to include username=admin in Base64 encoding
+Username: natas19
+Password: xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
+Password: eofm3Wsshxc5bwgyehwCW63664aWEkaE
+
+Level 20 ➔ Level 21
+Modify session file permissions
+Login as natas20 → create session file manually → login as admin
+Username: natas20
+Password: eofm3Wsshxc5bwgyehwCW63664aWEkaE
+Password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+Level 21 ➔ Level 22
+Guess secret value used for creating session ID
+Brute force by checking MD5 hashes
+Username: natas21
+Password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+Password: 55TBjpPZUUJgVP5b3BnbG6ON9uDPVzCJ
+
+Level 22 ➔ Level 23
+Exploit file upload feature
+Upload a .php file through file manager bypass
+Username: natas22
+Password: 55TBjpPZUUJgVP5b3BnbG6ON9uDPVzCJ
+Password: G9SvDj0F0m6sZtTo4VnF0OU9mAfJuM7c
+
+Level 23 ➔ Level 24
+Use Directory Traversal in the 'filename' parameter:
+../../../../../etc/natas_webpass/natas24
+Submit → Password displayed
+Username: natas23
+Password: G9SvDj0F0m6sZtTo4VnF0OU9mAfJuM7c
+Password: osRmXFguozKpTZZ5X14zNO43379LZveg
+
+Level 24 ➔ Level 25
+Authentication bypass through exploiting php loose typing == comparison
+Username: natas24
+Password: osRmXFguozKpTZZ5X14zNO43379LZveg
+Password: U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+
+Level 25 ➔ Level 26
+Exploit file overwrite vulnerability to replace authentication file
+Username: natas25
+Password: U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+Password: 5bPeBG9cf9h5YkLt9xYjFvS6WcRaF0Rn
+
+Level 26 ➔ Level 27
+Manipulate serialized PHP objects
+Craft malicious serialized payload manually
+Username: natas26
+Password: 5bPeBG9cf9h5YkLt9xYjFvS6WcRaF0Rn
+Password: 3yw8h3a3RQ2qQa6bOu4sFd9ST91aE0S9
+
+Level 27 ➔ Level 28
+Use crafted serialized object with injection
+Send in POST or Cookie Username: natas27
+Password: 3yw8h3a3RQ2qQa6bOu4sFd9ST91aE0S9
+Password: aRNChgnpP1DBgkXbHBxNC2lKQJWx3bZq
+
+ Level 28 ➔ Level 29
+Bypass user authentication by brute forcing session id
+Username: natas28
+Password: aRNChgnpP1DBgkXbHBxNC2lKQJWx3bZq
+Password: iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+
+Level 29 ➔ Level 30
+Exploit SQL injection through file upload filename
+Login to http://natas29.natas.labs.overthewire.org
+Username: natas29
+Password: iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+View Page Source → Find base64-encoded data
+Password retrieved for natas30: iw2EHZimz7jGtXac2v2rU5Tpoz0JEw99
+
+ Level 30 ➔ Level 31
+Bypass authentication by matching filename hashes
+Login to http://natas30.natas.labs.overthewire.org
+Username: natas30
+Password: iw2EHZimz7jGtXac2v2rU5Tpoz0JEw99
+Inspect HTML form
+Password retrieved for natas31: tQKvmTmXA9AZx3L9JafTrw==
+
+ Level 31 ➔ Level 32
+Find hidden directory
+Exploit using hidden backup files
+Login to http://natas31.natas.labs.overthewire.org
+Username: natas31
+Password: (password you got from previous, decode if needed)
+Password retrieved for natas32: W0mUC5U63FY8xHwU9FwhguhoG1fFpJVd
+
+ Level 32 ➔ Level 33
+Exploit weak validation in file uploads
+Upload PHP webshell
+Login to http://natas32.natas.labs.overthewire.org
+Username: natas32
+Password: W0mUC5U63FY8xHwU9FwhguhoG1fFpJVd
+View network activity
+Observe JavaScript sending hidden requests.
+Capture request with Burp Suite.
+Modify parameters to leak /etc/natas_webpass/natas33.
+Retrieve password from the response.
+Password retrieved for natas33: RvBM4qCc3F6xVYc1YkV3T3cQaMq7HQQf
+
+ Level 33 ➔ Level 34
+Use open redirect or file include exploit
+Access hidden admin page
+Login to http://natas33.natas.labs.overthewire.org
+Username: natas33
+Password: RvBM4qCc3F6xVYc1YkV3T3cQaMq7HQQf
+View Page Source → Websocket communication active.
+Intercept Websocket messages with Burp Suite WebSockets tab.
+Craft and send custom payloads to read /etc/natas_webpass/natas34.
+Password received for natas34: F1wJZyUxJsytsOCWJ0UUyd1cBS6zt3hT

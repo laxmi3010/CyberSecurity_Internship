@@ -1,0 +1,129 @@
+Team Members:
+1.Laxmi Gupta
+2.Sony Vishwakarma
+3.Harsh Shelar
+
+This is done by Laxmi Gupta
+
+
+1. KRYPTON – https://overthewire.org/wargames/krypton/
+
+Krypton Level 0 → Level 1
+Command  echo S1JZUFRPTklTR1JFQVQ= | base64 --decode
+O/P : KRYPTONISGREAT
+Command  ssh -p 2231 krypton1@krypton.labs.overthewire.org
+
+Krypton Level 1 → Level 2
+Command  file /krypton/krypton2/encrypt
+O/P : /krypton/krypton2/encrypt: setuid regular file, no read permission
+
+Krypton Level 2  Level 3
+Command : 
+mkdir /tmp/myworkdir
+cd /tmp/myworkdir
+ln -s /krypton/krypton2/keyfile.dat keyfile.dat
+chmod 711 /tmp/myworkdir
+/krypton/krypton2/encrypt
+ 
+Krypton Level 0 → Level 1
+Command : 
+echo S1JZUFRPTklTR1JFQVQ= | base64 --decode
+ssh -p 2231 krypton1@krypton.labs.overthewire.org
+
+Krypton Level 1 → Level 2
+cd /krypton/krypton1
+ls
+cat README
+cat krypton2
+cat krypton2 | tr “[ABCDEFGHIJKLMNOPQRSTUVWXYZ]” “[NOPQRSTUVWXYZABCDEFGHIJKLM]”
+OR
+cat kryton2 | tr “[A-Z]” “[N-M]”
+OR
+cat krypton2 | tr “[A-Z]” “[N-ZA-M]”
+output : LEVEL TWO PASSWORD ROTTEN
+logout
+enter password : ROTTEN
+
+Krypton Level 2 → Level 3
+ssh -p 2231 krypton2@krypton.labs.overthewire.org
+password : ROTTEN
+cd /krypton/krypton2
+ls
+cat krypton3
+cat README
+mktemp -d
+cd /tmp/tmp.Y2OxmhVhsF
+ln -s /krypton/krypton2/keyfile.dat
+ls
+cat /etc/issue
+/krypton/krypton2/encrypt etc/issue
+Ls
+cat ciphertext
+cat /krypton/krypton2/krypton3
+cat /krypton/krypton2/krypton3 | tr “[M-ZA-L]” “[A-Z]”
+password : CAESARISEASY
+Logout
+
+
+Krypton Level 3 → Level 4
+ssh -p 2231 krypton3@krypton.labs.overthewire.org
+ls -la
+ls
+cd /krypton/krypton3
+ls -la
+cat HINT1
+cat HINT2
+for i in {A..Z}; do printf $i; cat found1 found2 found3 | tr -cd $i | wc -c; done
+for i in {A..Z}; do printf $i; cat found1 found2 found3 | tr -cd $i | wc -c | tr -d '\n'; printf
+"$i \n"; done | sort -nr
+cat krypton4 | tr "SQJUBNGCDZVWMYTXKELAFIORHP" "ETAOINSRHDLUCMFYWGPBVKXQJZ"
+cat HINT2
+cat HINT1
+cat krypton4 | tr "SQJUBNGCDZVWMYTXKELAFIORHP" "ETAOINSRHDLUCMFYWGPBVKXQJZ"
+logout
+password : BRUTE
+
+
+Krypton Level 4 → Level 5
+cd /krypton/krypton4
+ls -la
+cat found1
+cat krypton5
+nano krypton5
+Password : CLEARTEXT
+Krypton Level 5 → Level 6
+cd /krypton/krypton4
+ls -la
+cat found1
+cat found2
+cat found3
+ls -la
+logout
+nano krypton6
+Password : RANDOM
+
+Krypton Level 6 → Level 7
+Ls
+cd /krypton/krypton7
+cd krypton6
+ls
+ls one time/
+cat krypton7
+cat HINT1
+cat HINT2
+mkdir /tmp/lev7
+cd /tmp/lev7
+ls 
+ln -s krypton/krypton6/k
+ln -s krypton/krypton6/keyfile.dat
+ln -s krypton/krypton6/krypton7
+ls
+chmod 777
+touch a.txt
+nano a.txt
+cat a.txt
+/krypton/krypton6/encrypt6 a.txt cipher.txt
+cat cipher.txt
+man xxd
+xxd -b a.txt
+xxd -b cipher.txt

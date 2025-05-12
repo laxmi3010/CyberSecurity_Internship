@@ -1,0 +1,106 @@
+Team Members:
+1.Laxmi Gupta
+2.Sony Vishwakarma
+3.Harsh Shelar
+
+This is done by Sony Vishwakarma
+
+Wargame 2: NATAS (OverTheWire)
+
+1. Learning Objective
+•	Understand and exploit real-world web vulnerabilities through progressive web security challenges.
+•	Build expertise in techniques like HTML source analysis, cookie manipulation, SQL injection, file upload exploitation, session hijacking, and authentication bypass.
+•	Learn how small web application mistakes lead to serious security issues.
+
+2. Key Tools/Commands Used
+•	Web Browsers: Firefox + Burp Suite Proxy
+•	Linux Commands: curl, cat
+•	Browser Inspection: View Page Source, Inspect Elements
+•	Encoding/Decoding: base64, hex decoding
+•	Brute-force Tools: Hydra, simple Bash scripts
+•	PHP knowledge: understanding strcmp, loose typing
+
+3. Concepts Learned
+•	Information Disclosure via HTML comments, robots.txt, hidden directories
+•	Local File Inclusion (LFI) vulnerabilities
+•	Cookie tampering and cookie decoding
+•	Command Injection and SQL Injection (Blind and Time-Based)
+•	File Upload Vulnerabilities (bypassing file type restrictions)
+•	Session ID Bruteforcing and Session Manipulation
+•	PHP Object Injection and Serialization vulnerabilities
+•	Exploiting WebSocket Communications
+•	Directory Traversal Attacks
+
+4. Walkthrough (Level by Level)
+Natas Level 0 ➔ Level 1 to Level 4 ➔ Level 5
+•	View Page Source / HTTP Headers manipulation
+•	Finding passwords hidden in HTML comments or directories.
+Natas Level 5 ➔ Level 8 ➔ Level 9
+•	Burp Suite to intercept requests, modify cookies (loggedin=1).
+Natas Level 9 ➔ Level 10 ➔ Level 11
+•	Command Injection via input fields.
+•	Directory Traversal to access password files.
+Natas Level 11 ➔ Level 16 ➔ Level 17
+•	XOR Cookie decoding.
+•	Blind SQL Injection techniques.
+Natas Level 17 ➔ Level 20 ➔ Level 23
+•	Time-based SQL Injection.
+•	Session ID Brute-forcing.
+•	Base64 encoded session manipulation.
+
+Level 23 ➔ Level 24
+•	Technique: Directory Traversal in filename field
+•	Password: osRmXFguozKpTZZ5X14zNO43379LZveg
+
+Level 24 ➔ Level 25
+•	Technique: PHP Loose Typing Vulnerability (0e trick)
+•	Password: U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+
+Level 25 ➔ Level 26
+•	Technique: Overwrite important auth file through vulnerable input
+•	Password: 5bPeBG9cf9h5YkLt9xYjFvS6WcRaF0Rn
+
+Level 26 ➔ Level 27
+•	Technique: PHP Object Injection — Malicious Serialized Object
+•	Password: 3yw8h3a3RQ2qQa6bOu4sFd9ST91aE0S9
+
+Level 27 ➔ Level 28
+•	Technique: Brute-force session id
+•	Password: aRNChgnpP1DBgkXbHBxNC2lKQJWx3bZq
+
+Level 28 ➔ Level 29
+•	Technique: SQL Injection vulnerability in file upload.
+•	Password: iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+
+Level 29 ➔ Level 30
+•	Technique: Base64 encoded password inside hidden form fields
+•	Password: iw2EHZimz7jGtXac2v2rU5Tpoz0JEw99
+
+Level 30 ➔ Level 31
+•	Technique: Bypass hash matching by uploading crafted file
+•	Password: tQKvmTmXA9AZx3L9JafTrw==
+
+Level 31 ➔ Level 32
+•	Technique: Find hidden backup files
+•	Password: W0mUC5U63FY8xHwU9FwhguhoG1fFpJVd
+
+Level 32 ➔ Level 33
+•	Technique: Exploit hidden AJAX request leaks using Burp Suite
+•	Password: RvBM4qCc3F6xVYc1YkV3T3cQaMq7HQQf
+
+Level 33 ➔ Level 34
+•	Technique: WebSocket communication interception → Craft custom payload
+•	Password: F1wJZyUxJsytsOCWJ0UUyd1cBS6zt3hT
+
+5. Reflection/Notes
+•	This wargame provided realistic insight into how web application vulnerabilities are found, exploited, and abused.
+•	Gained hands-on experience with:
+o	Information Gathering
+o	Web Traffic Interception
+o	Command and SQL Injection Techniques
+o	Cookie and Session Exploitation
+o	PHP Code Behavior
+o	WebSockets hacking
+•	Mastering tools like Burp Suite was critical to completing the later levels.
+•	These skills are highly valuable for Web Security, Bug Bounty Hunting, and Penetration Testing.
+

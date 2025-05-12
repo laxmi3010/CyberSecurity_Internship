@@ -1,0 +1,51 @@
+
+Team Members:
+1.Laxmi Gupta
+2.Sony Vishwakarma
+3.Harsh Shelar
+
+This is done by Harsh Shelar
+
+Wargame 3: LEVIATHAN (OverTheWire)
+
+1. Learning Objective
+•	Developed a deeper understanding of Linux privilege escalation techniques, learning how to navigate file systems, identify permission misconfigurations, and exploit weak binaries to gain higher-level access.
+•	Gained hands-on experience with tools like ltrace for binary analysis, allowing me to trace system calls and uncover hidden vulnerabilities, as well as using symbolic links creatively to bypass access restrictions and manipulate file behavior.
+
+2. Key Tools/Commands Used
+•	ssh
+•	ls, cat, chmod, ln -s, ltrace
+•	touch, nano, mktemp
+•	bash scripting (for brute force)
+
+3. Concepts Learned
+•	Gained hands-on experience with binary exploitation and reverse engineering, using tools like ltrace to understand how binaries interact with system libraries and where vulnerabilities might exist.
+•	Understood how small mistakes in C programming, such as improper use of strcmp and access() functions, can lead to critical security vulnerabilities that attackers can exploit.
+•	Learned to manipulate the file system by creating symbolic links and temporary files to trick binaries into accessing protected files, bypassing standard read restrictions.
+•	Developed and used simple Bash scripts to brute-force numeric password fields, highlighting the importance of automation when dealing with weak authentication systems.
+•	Strengthened my ability to analyze program behavior, identify flaws, and craft effective exploits, building a strong foundation for penetration testing and secure coding practices.
+
+4. Walkthrough (Level by Level)
+Leviathan Level 0 ➔ Level 1
+•	Found bookmarks.html in .backup → Extracted password.
+Leviathan Level 1 ➔ Level 2
+•	Used ltrace on check binary → Found password by tracing function call.
+Leviathan Level 2 ➔ Level 3
+•	Used symbolic linking to bypass access control → Retrieved password.
+Leviathan Level 3 ➔ Level 4
+•	Analysed level3 executable → Guessed correct password using hints from ltrace.
+Leviathan Level 4 ➔ Level 5
+•	Found password hidden in binary content inside .trash folder.
+Leviathan Level 5 ➔ Level 6
+•	Symbolic link /tmp/file.log to sensitive file → Password leaked through program output.
+Leviathan Level 6 ➔ Level 7
+•	Brute-forced 4-digit password using bash script (brute.sh) → Retrieved password.
+Leviathan Level 7
+•	Final level - congrats message after successful password retrieval.
+
+5. Reflection/Notes
+•	Working with binary executables enhanced my reverse engineering skills significantly, helping me understand how compiled programs behave at runtime and how vulnerabilities can be identified through behavior analysis.
+•	I realized how small coding mistakes in C programs, such as improper use of functions like strcmp for password checks or access() for permission verification, can introduce critical security flaws that attackers can exploit easily.
+•	I gained hands-on experience in creating simple Bash brute-force scripts, which automated password guessing processes and demonstrated the effectiveness of automation in breaking weak security measures.
+
+

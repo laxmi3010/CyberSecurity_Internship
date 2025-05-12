@@ -1,0 +1,160 @@
+
+Team Members:
+1.Laxmi Gupta
+2.Sony Vishwakarma
+3.Harsh Shelar
+
+This is done by Harsh Shelar
+
+3. LEVIATHAN – https://overthewire.org/wargames/leviathan/
+
+Leviathan Over the Wire
+ 
+
+This is all the details we have for the Leviathan Over the wire game. So let’s connect to it and then find the answers or you can say passwords for the next Levels. Now make the connection using the ssh
+
+Level0:-
+ 
+Pass: leviathan0
+Command:- ls- al
+ 
+
+Now let’s find what’s inside the .backup folder
+ 
+
+Here we have the bookmarks.html file lets go through it if we have the password for the next level. Here we know that the next level user is leviathan1 then let’s find the keyword in the html file for that
+
+ 
+And here we got the password 3QJ3TgzHDq
+
+Level1:-
+ 
+
+Pass: 3QJ3TgzHDq
+
+ 
+
+Here we found that we have an executable file named as check so let’s try to run it 
+ 
+
+As we don;t know the password let’s try to check the libraries and other things this program is using by using the tool ltrace
+ 
+
+We saw that the code is comparing using the strmcp function so let’s try that string we have in the code 
+ 
+
+After the pass that we have we got the connection to the leviathan2 and we got the password for the leviathan2 in the file located at /etc/leviathan_pass/leviathan2 and the pass is NsN1HwFoyN
+
+Level2:-
+ssh leviathan2@leviathan.labs.overthewire.org -p 2223
+ 
+
+Pass: NsN1HwFoyN
+
+ 
+Here we see that we have an executable file named as printfile so let’s try to run that file 
+
+ 
+As we have to provide a file name let’s provide it with the /etc/leviathan_pass/leviathan3 as  have the password in that file 
+
+ 
+We can’t access that file but let’s try to analyse the program and test it with some test file 
+
+ 
+We use l trace and see that the program is using the access() function to using “/bin/cat” to read the contents of the file we previously saw that the program is owned by leviathan3 so lets try to make a file with touch (touch pass\ file.txt) this will create a file as “pass file.txt” and then try to run that printfile program on that. As we can see in the image below that the program is treating it as two different files so let’s create a symbolic link to the file pass as the program will be running with the privileges of the leviathan3.
+Ln -s /etc/leviaathan_pass/leviathan3
+
+ 
+And after running that with the command: ~/./printfile “pass file.txt” we got the password
+
+ 
+Pass: f0n8h2iWLP
+LEVEL3-
+
+ssh leviathan3@leviathan.labs.overthewire.org -p 2223
+ 
+Pass: f0n8h2iWLP
+ 
+Here after listing the files and folders in the working directory we see that there is an executable file named level3 so i just tries to run that and it prompts for a password so i just provide it with 1 and get that it is the wrong password so let’s try to use our tool ltarce on the program
+
+ 
+Then i see that there is a function strcmp() which compare our pass with the snlprintf so i just tried to run the program again and give it the password snlprintf
+
+ 
+And we got the shell here and then we just got the password from the /etc/leviathan_pass/leviathan4 and the pass is WG1egElCvO
+
+
+
+ 
+LEVEL4:-
+ssh leviathan4@leviathan.labs.overthewire.org -p 2223
+ 
+Pass: WG1egElCvO
+
+ 
+We just list the directory where we are currently present and saw that there is a .trash folder and then navigate inside that. Then we saw that there is an executable names as bin then we just tried to run that
+
+ 
+Here we got some binaries and then we just tried to convert then to ASCII to see if that has some meaning
+
+ 
+
+And it is the password for the next level 0dyxT7F4QD
+
+Level 5:-
+ssh leviathan5@leviathan.labs.overthewire.org -p 2223
+ 
+Pass: 0dyxT7F4QD
+
+ 
+Then we see the contents of the present directory and found out that there is an executable file named leviathan5 the we tried to run that and also used ltarce tool and found out that it is reading the contents of the file /tmp/file.log so we just created a symbolic link to file.log file 
+
+ 
+Then we run the program and got the password for that. The password is szo7HDB88w
+ 
+Level6:-
+
+ssh leviathan6@leviathan.labs.overthewire.org -p 2223
+ 
+Pass:szo7HDB88w
+
+ 
+We just list the directory in which we are present and found that there is an executable file named leviathan6 and we tried to run that program and it is taking 4 digit number as the password so we just need to make a simple bruteforce program.
+
+ 
+Just made a temp file in the targeted system and named the program that i made as brute.sh
+#!/bin/bash
+for a in {0000..9999}
+do
+echo”Trying password: $a”
+~/leviathan6 $a
+done
+ 
+ 
+After gaining the shell we just triedd the id command and we have the privilege of the leviathan7
+And in the cat /etc/leviathan_pass/leviathan7 we got the password
+ 
+The pass id qEs5Io5yM8
+ 
+Level7:-
+
+ssh leviathan7@leviathan.labs.overthewire.org -p 2223
+ 
+We just listed the files in the current directory and we have the congratulation message there .
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
